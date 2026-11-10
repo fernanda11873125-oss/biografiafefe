@@ -1,0 +1,691 @@
+
+/* ==========================================
+   ENROLADOS - RAPUNZEL 🌸
+   TEMA MÁGICO DO REINO DE CORONA
+========================================== */
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --fundo: #211535;
+    --fundo2: #302047;
+    --roxo: #694b91;
+    --lilas: #a98bd4;
+    --rosa: #e8a5c8;
+    --rosa-claro: #f7d5e8;
+    --dourado: #f5cf72;
+    --amarelo: #ffe9a6;
+    --branco: #fff8ef;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--fundo);
+    color: var(--branco);
+    overflow-x: hidden;
+}
+
+/* ABERTURA */
+
+.abertura {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at center, #a77bc4 0%, transparent 55%),
+        linear-gradient(135deg, #211535, #674783, #c18bb8);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+}
+
+.abertura::before {
+    content: "✨";
+    position: absolute;
+    top: 12%;
+    left: 8%;
+    font-size: 65px;
+    opacity: 0.6;
+    animation: brilho 3s infinite;
+}
+
+.abertura::after {
+    content: "🌸";
+    position: absolute;
+    bottom: 15%;
+    right: 12%;
+    font-size: 75px;
+    animation: flutuar 4s infinite ease-in-out;
+}
+
+.abertura-conteudo {
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+    animation: aparecer 1.5s ease;
+}
+
+.frase-topo {
+    color: var(--amarelo);
+    letter-spacing: 6px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.abertura h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 70px;
+    color: white;
+    margin: 25px 0;
+    text-shadow: 0 0 15px #ffe9a6, 0 0 35px #e6b95f;
+}
+
+.abertura h1 span {
+    display: block;
+    color: var(--amarelo);
+}
+
+.linha-decorativa {
+    color: var(--dourado);
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.descricao-abertura {
+    max-width: 500px;
+    margin: 0 auto 35px;
+    line-height: 1.9;
+    color: #fff0e9;
+    font-size: 16px;
+}
+
+.botao-abertura {
+    display: inline-block;
+    background: linear-gradient(135deg, #f5cf72, #fff0b5);
+    color: #49335e;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.4s;
+    box-shadow: 0 0 20px #f5cf7280;
+}
+
+.botao-abertura:hover {
+    background: white;
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px #ffe9a6;
+}
+
+/* ELEMENTOS MÁGICOS */
+
+.morcego {
+    position: absolute;
+    font-size: 40px;
+    opacity: 0.8;
+    animation: flutuar 4s infinite ease-in-out;
+    filter: drop-shadow(0 0 10px #f5cf72);
+}
+
+.morcego1 { top: 15%; left: 15%; }
+.morcego2 { top: 25%; right: 15%; animation-delay: 1s; }
+.morcego3 { bottom: 15%; left: 20%; animation-delay: 2s; }
+
+.lua {
+    position: absolute;
+    right: 8%;
+    bottom: 8%;
+    font-size: 100px;
+    color: var(--amarelo);
+    opacity: 0.5;
+    text-shadow: 0 0 30px #ffe9a6;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes brilho {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* MENU */
+
+header {
+    background: #211535;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 2px solid var(--dourado);
+    box-shadow: 0 5px 25px #00000070;
+}
+
+header h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--amarelo);
+    font-size: 23px;
+    text-shadow: 0 0 12px #f5cf72;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--dourado);
+    text-shadow: 0 0 12px var(--dourado);
+}
+
+/* INÍCIO */
+
+.inicio {
+    min-height: 85vh;
+    padding: 70px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background:
+        radial-gradient(circle at 80% 50%, #694b91 0%, transparent 40%),
+        var(--fundo);
+}
+
+.inicio-texto {
+    max-width: 550px;
+}
+
+.etiqueta {
+    color: var(--dourado);
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+.inicio-texto h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 42px;
+    margin: 20px 0;
+    color: white;
+}
+
+.inicio-texto h1 span {
+    color: var(--amarelo);
+    text-shadow: 0 0 15px #f5cf72;
+}
+
+.inicio-texto h3 {
+    color: var(--rosa);
+    margin-bottom: 15px;
+}
+
+.inicio-texto p {
+    line-height: 1.9;
+    color: #eee0f5;
+    margin-bottom: 25px;
+}
+
+.inicio-imagem img {
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 4px solid var(--dourado);
+    box-shadow: 0 0 20px #f5cf72, 0 0 45px #a98bd480;
+    transition: 0.4s;
+}
+
+.inicio-imagem img:hover {
+    transform: scale(1.04);
+}
+
+/* BOTÕES */
+
+.botao {
+    display: inline-block;
+    background: linear-gradient(135deg, #8060a8, #bd9bda);
+    color: white;
+    padding: 13px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid var(--dourado);
+    transition: 0.4s;
+}
+
+.botao:hover {
+    background: var(--dourado);
+    color: #302047;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #f5cf72;
+}
+
+/* TÍTULOS */
+
+.titulo {
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    color: var(--amarelo);
+    font-size: 32px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 15px #f5cf7280;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #ead8f5;
+    margin-bottom: 40px;
+}
+
+/* SOBRE */
+
+.sobre {
+    padding: 80px 10%;
+    background: linear-gradient(135deg, #302047, #674b83);
+}
+
+.sobre-conteudo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.cartao {
+    background: linear-gradient(145deg, #694b91, #352348);
+    padding: 35px 20px;
+    text-align: center;
+    border-radius: 18px;
+    border: 1px solid #d6b4e7;
+    transition: 0.4s;
+    box-shadow: 0 5px 15px #00000030;
+}
+
+.cartao:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px #f5cf7260;
+    border-color: var(--dourado);
+}
+
+.cartao i {
+    font-size: 38px;
+    color: var(--dourado);
+    margin-bottom: 18px;
+}
+
+.cartao h3 {
+    color: var(--amarelo);
+    margin-bottom: 12px;
+    font-family: 'Cinzel', serif;
+}
+
+.cartao p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #f1e5f5;
+}
+
+/* HABILIDADES */
+
+.habilidades {
+    padding: 80px 10%;
+    background: var(--fundo);
+}
+
+.lista-habilidades {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 22px;
+}
+
+.lista-habilidades li {
+    background: #352348;
+    padding: 35px 20px;
+    text-align: center;
+    border-radius: 18px;
+    border: 1px solid #a98bd4;
+    border-bottom: 4px solid var(--dourado);
+    transition: 0.4s;
+}
+
+.lista-habilidades li:hover {
+    transform: translateY(-8px);
+    background: #694b91;
+    box-shadow: 0 0 20px #f5cf7240;
+}
+
+.lista-habilidades i {
+    font-size: 38px;
+    color: var(--dourado);
+    margin-bottom: 18px;
+}
+
+.lista-habilidades h3 {
+    color: var(--amarelo);
+    margin-bottom: 12px;
+    font-family: 'Cinzel', serif;
+}
+
+.lista-habilidades p {
+    color: #eee0f5;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* PROJETOS / SONHOS */
+
+.projetos {
+    padding: 80px 10%;
+    background: linear-gradient(135deg, #302047, #674b83);
+}
+
+.projetos-conteudo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.projeto {
+    background: linear-gradient(145deg, #694b91, #352348);
+    padding: 35px 25px;
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid #d6b4e7;
+    transition: 0.4s;
+}
+
+.projeto:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 25px #f5cf7260;
+    border-color: var(--dourado);
+}
+
+.projeto i {
+    font-size: 38px;
+    color: var(--dourado);
+    margin-bottom: 18px;
+}
+
+.projeto h3 {
+    color: var(--amarelo);
+    margin-bottom: 12px;
+    font-family: 'Cinzel', serif;
+}
+
+.projeto p {
+    color: #eee0f5;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* FRASE ESPECIAL */
+
+.frase {
+    background:
+        radial-gradient(circle, #a77bc4, transparent 75%),
+        linear-gradient(135deg, #694b91, #a878b5);
+    text-align: center;
+    padding: 75px 15%;
+    border-top: 1px solid var(--dourado);
+    border-bottom: 1px solid var(--dourado);
+}
+
+.frase span {
+    font-size: 35px;
+    color: var(--amarelo);
+}
+
+.frase h2 {
+    font-family: 'Cinzel', serif;
+    color: white;
+    font-size: 26px;
+    line-height: 1.8;
+    margin: 20px 0;
+    text-shadow: 0 0 15px #ffe9a680;
+}
+
+.frase p {
+    color: var(--amarelo);
+}
+
+/* CONTATO */
+
+.contato {
+    padding: 80px 10%;
+    text-align: center;
+    background: var(--fundo);
+}
+
+.contato p {
+    color: #eee0f5;
+    margin-bottom: 25px;
+}
+
+/* CURRÍCULO */
+
+.curriculo {
+    padding: 100px 8%;
+    text-align: center;
+    background: #211535;
+}
+
+.curriculo-conteudo {
+    max-width: 650px;
+    margin: 40px auto 0;
+    padding: 45px 30px;
+    background: linear-gradient(145deg, #694b91, #302047);
+    border: 1px solid var(--dourado);
+    border-radius: 20px;
+    box-shadow: 0 0 25px #f5cf7230;
+    transition: 0.4s;
+}
+
+.curriculo-conteudo:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 35px #f5cf7260;
+    border-color: var(--amarelo);
+}
+
+.curriculo-conteudo > i {
+    font-size: 65px;
+    color: var(--dourado);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.curriculo-conteudo h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--amarelo);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.curriculo-conteudo p {
+    color: #eee0f5;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.botoes-curriculo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.botoes-curriculo .botao {
+    min-width: 210px;
+    padding: 15px 22px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.botoes-curriculo .visualizar {
+    background: linear-gradient(135deg, #8060a8, #bd9bda);
+    color: white;
+    border: 1px solid transparent;
+}
+
+.botoes-curriculo .baixar {
+    background: transparent;
+    border: 1px solid var(--dourado);
+    color: var(--amarelo);
+}
+
+.botoes-curriculo i {
+    margin-right: 8px;
+}
+
+.botoes-curriculo .botao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #f5cf72;
+}
+
+.botoes-curriculo .baixar:hover {
+    background: #8060a8;
+    color: white;
+}
+
+/* RODAPÉ */
+
+footer {
+    background: #160e22;
+    text-align: center;
+    padding: 30px;
+    color: var(--amarelo);
+    font-size: 13px;
+    border-top: 2px solid #a98bd4;
+}
+
+footer span {
+    display: block;
+    margin-top: 8px;
+    color: var(--rosa);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .abertura h1 {
+        font-size: 43px;
+    }
+
+    .frase-topo {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .descricao-abertura {
+        font-size: 14px;
+    }
+
+    .morcego {
+        font-size: 25px;
+    }
+
+    .lua {
+        font-size: 60px;
+    }
+
+    .inicio {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 50px 7%;
+    }
+
+    .inicio-texto h1 {
+        font-size: 30px;
+    }
+
+    .inicio-imagem img {
+        width: 230px;
+        height: 270px;
+    }
+
+    .titulo {
+        font-size: 24px;
+    }
+
+    .frase h2 {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .curriculo {
+        padding: 70px 6%;
+    }
+
+    .curriculo-conteudo {
+        padding: 35px 20px;
+    }
+
+    .botoes-curriculo {
+        flex-direction: column;
+    }
+
+    .botoes-curriculo .botao {
+        width: 100%;
+    }
+}
